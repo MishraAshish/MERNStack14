@@ -20,3 +20,9 @@ validVoter && voterAge == 18 ?
     console.log("A valid voter, can vote!!")
     :
     console.log("A InValid voter")
+
+
+//Ternary Operator
+// condition/'s ? "True Case" : "False Case"
+
+//validVoter && Number.isInteger(voterAge) && voterAge >= 18 ? console.log("Valid Voter and can vote") : console.log("InValid Voter and can't vote");
