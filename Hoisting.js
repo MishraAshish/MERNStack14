@@ -38,12 +38,12 @@ funcExpression()
 var globalVar = "global variable"
 
 function Scope() {
-    console.log(globalVar) //hoisted value in a function
+    console.log(globalVar) //hoisted value in a function - undefined
 
-    var globalVar = "No More Global";
+    //var globalVar = "No More Global";
     var localVar = "Local Var";
     
-    console.log(globalVar) //
+    console.log(globalVar) //No More Global
 }
 
 Scope();
