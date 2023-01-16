@@ -65,3 +65,10 @@ var obj3 = {name : "MyName3", session:"MERNStack"}
 Object.assign(obj3, obj2, obj1)
 //obj1.newProp  = "Sdasdaasd"; //preservation of immutability is happening
 console.log(obj3)
+
+
+//create an account object with details like account number, amount, getBalance as a function
+//using account object create new object with name loan account, add new properties loantype and loanamount, getloanDetails
+
+//create three different addresses of a user in threee different objects, merge them into one object
+//create a null prototype object
