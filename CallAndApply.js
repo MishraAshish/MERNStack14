@@ -59,3 +59,27 @@ GetVehicleInfo.apply(BMW, ["Yes","5","4","Yes","US"])
 GetVehicleInfo.apply(SomeCar, ["No","3","4","Yes","Unknown"])
 
 //Print student information using call and apply and try to see how we get these functions executed immediatly
+
+
+
+var UserInfo = {
+    name : "Carlos",
+    age : 21,
+
+    getUserInfo : function () {
+        // console.log(`
+        //     User Name is  - ${this.name}
+        //     User Age is  - ${this.age}
+        // `)
+        // console.log("outer this -", this)
+
+        setTimeout(function () {
+            console.log(`
+                User Name is  - ${this.name}
+                User Age is  - ${this.age}
+            `)  
+        }, 1000)
+    }
+}
+
+UserInfo.getUserInfo()
