@@ -78,7 +78,7 @@ var UserInfo = {
                 User Name is  - ${this.name}
                 User Age is  - ${this.age}
             `)  
-        }, 1000)
+        }.bind(UserInfo), 1000) //bind is responsible to give the context whenever we need not executes immediately like call or apply
     }
 }
 
