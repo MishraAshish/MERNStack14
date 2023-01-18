@@ -83,3 +83,5 @@ var UserInfo = {
 }
 
 UserInfo.getUserInfo()
+// context of a function is either set by call, apply or bind or is the object over which its executed
+//if a function is executed normally func() then its context would be global
