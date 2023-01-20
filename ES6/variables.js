@@ -65,12 +65,36 @@ console.log(User)
 
 
 
-//Query : for output
+//Query : for output of var - functional scope variable
+//function - then when you will get the output add(4,5)
 
-for (var index = 0; index < 5; index++) {
-    setTimeout(function () {
-        console.log("index ", index) //
-    }, 1000);
+// for (var index = 0; index < 5; index++) {
+//     setTimeout(function () {
+//         console.log("index ", index) //
+//     }, 1000);
+// }
+
+// console.log("index ", index) //
+
+// for (var index = 0; index < 5; index++) {
+
+//     (function IIFE(params) { //IIFE used to invoke the function get the value from var and assign in settimeout
+//         setTimeout(function () {
+//             console.log("index ", params) //
+//         }, 1000);    
+//     })(index)
+    
+// }
+
+// console.log("index ", index) //
+
+
+for (let i = 0; i < 5; i++) { //lexical scope variable get evaluated immediately
+
+        setTimeout(function () {
+            console.log("index let", i) //
+        }, 1000);    
+    
 }
 
-console.log("index ", index) //
+//console.log("index let", i) //
