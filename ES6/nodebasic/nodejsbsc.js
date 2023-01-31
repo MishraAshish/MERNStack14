@@ -12,7 +12,6 @@ const readFilePromise = util.promisify(readFile)
 // readFile in this case is also a promise intent
 readFile("../forINforOF.js","utf-8").then((data, err)=>{ log(data); log(err) })
 
-
 const cpuCount = os.cpus().length
 log("CPU Count ", cpuCount)
 
@@ -55,3 +54,19 @@ log("Logging using console log from console module!!")
 // console.log(os.userInfo());
 // console.log(os.hostname());
 // console.log(os.release());
+
+
+// things we'll need -
+
+// callback
+// promise
+// let-const
+// destructure
+// map-set
+// map-filter-some-reduce
+// spread-rest
+// export-import
+// template-literals
+// short-hand
+// arrow function
+// classes
