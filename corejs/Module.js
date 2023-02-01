@@ -17,6 +17,14 @@ var SecondUser = {
     }
 }
 
+var ThirdUser = {
+    fName : "ThirdUser User",
+    lName : "ThirdUser User Last",
+    getUserLastName : function (params) {
+        return {Name : this.lName}
+    }
+}
+
 console.log(FirstUser.getUserDetail())
 
 // module.exports = {
