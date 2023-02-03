@@ -10,3 +10,8 @@
 // npm - command line interface to manage node package, using cli commands
 
 // yarn - similar commands for MEAN and MERNSTack
+
+//1. const app = express() - application
+//2. request object
+//3. response object
+//4. router
