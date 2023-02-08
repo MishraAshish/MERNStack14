@@ -65,3 +65,11 @@ adminApp.get("/hello",(req, res)=>{
 app.listen(3000)
 
 console.log("express is listening on port localhost:3000")
+
+
+//Practice - 8th Feb- 2023
+//Create a student schema using mongoose with details like - Name, Session, Address, etc
+//Use it to create mongoose model, within same database
+//Use this student model to create an api with name save student
+//In save student get the schema values from query string and save it to the mongodb using model.save
+//In next call update the schema with new value - CurrentSession and save the same value to check that we can save different documents within same collection
