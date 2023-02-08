@@ -20,6 +20,7 @@ router.get('/default',(req, res)=>{
 })
 
 router.get('/all',(req, res)=>{
+
     defaultModel.find((err, data)=>{
         if (err) {
             console.log("err ", err);
