@@ -9,6 +9,9 @@ let defaultSchema = new mongoSchema({
     UserName : {type: String, required : true},
     SessionName : String,
     Address : String
+},
+{
+    versionKey: false //default value is true : versionkey: true //error
 })
 
 let defaultModel = mongooseObj.model("first", defaultSchema); //firsts - pluralize the collection name

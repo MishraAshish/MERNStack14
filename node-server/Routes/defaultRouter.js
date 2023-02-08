@@ -19,6 +19,19 @@ router.get('/default',(req, res)=>{
     })    
 })
 
+router.get('/all',(req, res)=>{
+    defaultModel.find((err, data)=>{
+        if (err) {
+            console.log("err ", err);
+            console.log("err while fetching");
+        } else {
+            //_id will be created if it works
+            res.send(data)
+        }
+    })    
+})
+
+
 router.get('/', function (req, res) {
     res.send('Hello World')
   })
