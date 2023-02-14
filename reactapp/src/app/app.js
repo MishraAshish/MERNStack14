@@ -1,70 +1,31 @@
 import React, { Component } from "react";
-import DefaultApp from "./Common/DefaultComponent";
+import "./app.css"
+import { BrowserRouter as Router, Routes, Redirect, Route } from "react-router-dom";// browser router from react
+
+import Header from "./Common/HeaderComponent"
+import HomeComponent from "./Common/HomeComponent";
 import Footer from "./Common/FooterComponent";
+import About from "./Common/AboutComponent";
+import NotFound from "./Common/NotFound";
 
 
 export default class ApplicationComponent extends Component{
-
-    constructor(props){
-        super();        
-        //allows us to manipulate the virtual dom
-        this.state = {
-            title : "Application Component Title",
-            counter : 20
-        }
-    }
-
-    // titleChange = setInterval(() => {
-    //     //this.setState({}) - callback api used to generate new state
-    //     this.setState({
-    //         //title : "Application Component Title"
-    //         title : "Change Title after 10 seconds"
-    //     })
-    //     console.log(this.state.title);
-    // }, 10000);//updating at every 10 seconds
-
-    //event handler
-    updateCounter = (counter)=>{
-        //alert("Alerted!!" + this.state.counter)
-
-        //setState : an api provided by react to pass the message to react that there is change in state jut re-render
-        //the new v-dom will be created and this happens in batch format
-        this.setState({
-            counter : this.state.counter + counter
-        })
-
-
-        //this.state.counter++;
-
-        //this should be avoided
-        //this.forceUpdate(); //it skips the other life cycle methods of class component like : shouldComponent
-
-        //evt.preventDefault();//any default behaviour we must stop
-    }
-
 
     //virtual dom of component // 1 - state  ==>  2 - state
     render(){
         console.log("Render component")
         return(
-            <div>
-                <label>From Application Class Component</label>
-                <h4>{this.state.title}</h4>
+            <Router>
+                <Header />
+                    <Routes>
+                        <Route path="/home" element={<HomeComponent title={"Home Page Title"} />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/about/:id" element={<About />} />
 
-                <DefaultApp parentTitle={this.state.title} counter={this.state.counter}>
-                    <h1>Child HTML 1 Element</h1>
-                    <h1>Child HTML 2nd Element</h1>
-                    {/* <Footer/> */}
-                </DefaultApp>
-                {/* <Footer>
-                    <h1>Child HTML 1 Element</h1>
-                    <h1>Child HTML 2nd Element</h1>
-                </Footer> */}
-
-                {/* <button onClick={this.updateCounter}>Increment Counter</button> */}
-
-                <Footer clickCounter={this.updateCounter} counter={this.state.counter}/>
-            </div>
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                <Footer />
+            </Router>
         )
     }
 }

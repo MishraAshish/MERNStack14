@@ -19,6 +19,8 @@ let DefaultApp = (props)=>{
             {props.children[0]}
             {props.children[1]}
             {props.children[2]}
+
+            <button onClick={()=>props.clickCounter(5)}>Increment Counter</button>
         </>
     )
 }

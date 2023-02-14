@@ -8,7 +8,7 @@ webpackConfig = {
     },
     // webpack 5 comes with devServer which loads in development mode
     devServer: {
-        port: 9092,
+        port: 9092,//9092/home
         historyApiFallback : true //localhost:9092/user
     },
     plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
