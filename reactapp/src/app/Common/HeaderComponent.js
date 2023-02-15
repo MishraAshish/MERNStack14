@@ -26,4 +26,12 @@ let Header = ()=>{
     )
 }
 
+// Header.defaultProps = {
+//     headerTitle : "Header Default Component"
+// }
+
+// Header.propTypes = {
+//     headerTitle : PropTypes.string.isRequired
+// }
+
 export default Header;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 let DefaultApp = (props)=>{
     let firstValue = 25;
@@ -20,9 +21,17 @@ let DefaultApp = (props)=>{
             {props.children[1]}
             {props.children[2]}
 
-            <button onClick={()=>props.clickCounter(5)}>Increment Counter</button>
+            <button onClick={()=>props.clickCounter(1)}>Increment Counter</button>
         </>
     )
+}
+
+// DefaultApp.defaultProps = {
+//     counter : 0
+// }
+
+DefaultApp.propTypes = {
+    counter : PropTypes.number.isRequired
 }
 
 export default DefaultApp;
