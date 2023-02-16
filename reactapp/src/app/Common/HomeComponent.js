@@ -108,29 +108,101 @@ export default class HomeComponent extends Component{
         //evt.preventDefault();//any default behaviour we must stop
     }
 
+    changeHandler = (evt)=>{
+        console.log("changed value ", evt.target.value)
+        debugger;
+        //this.state.address = evt.target.value; //changing the state
+        let classList = evt.target.classList;
+        
+        if (classList.contains("session")) {
+            this.setState({
+                session : evt.target.value
+            })
+        } else {
+            this.setState({
+                address : evt.target.value
+            })    
+        }
+        evt.preventDefault();
+    }
+
+    changeHandler_session = (evt)=>{
+        console.log("changed value ", evt.target.value)        
+        this.setState({
+            session : evt.target.value
+        })
+
+        evt.preventDefault();
+    }
+
+    submitHandler = (evt)=>{
+        this.setState({
+            address : this.address.current.value,
+            session : this.session.current.value
+        })
+
+        alert("Form Submitted Successfully!!")
+        evt.preventDefault();//stops the default behaviour
+    }
 
     //virtual dom of component // 1 - state  ==>  2 - state
     render(){
         console.log("Render component")
         return(
             <div>
-                <label>From Home Class Component</label>
+                <h1>Home Component</h1>
+                {/* controlled component div based structure using fluid model*/}
+
+                <div className="col-md-12 form">
+                    <div className="col-md-7">
+                        <label>Address : </label>
+                        <input type={"text"} value={this.state.address} placeholder="Please Type Your Address" 
+                            className="col-md-8 address" onChange={this.changeHandler}></input>
+                    </div>
+                    <div className="col-md-7">
+                        <label>Session : </label>
+                        <input type={"text"} value={this.state.session} placeholder="Please Type Your Session" 
+                            className="col-md-8 session" onChange={this.changeHandler_session} ></input>
+                    </div>
+                </div>
+
+
+                {/*un-controlled component uses form integration*/}
+                <form className="form col-md-12" action="user/saveinfo" onSubmit={this.submitHandler}>
+                    <section className="col-md-7">
+                        <label>Address : </label>
+                        <input type={"text"} placeholder="Please Type Your Address" 
+                            className="col-md-8 address" ref={this.address} required maxLength={"15"} ></input>
+                    </section>
+                    <section className="col-md-7">
+                        <label>Session : </label>
+                        <input type={"text"} placeholder="Please Type Your Session" 
+                            className="col-md-8 address" ref={this.session} required maxLength={"15"}></input>
+                    </section>
+
+                    <input type={"submit"} value="Submit" ></input>
+
+                </form>
+
+
+
+                {/* <label>From Home Class Component</label>
                 <h4>{this.state.title}</h4>
 
                 <DefaultApp parentTitle={this.state.title} counter={this.state.counter}
                         clickCounter={this.updateCounter} >
                     <h1>Child HTML 1 Element</h1>
                     <h1>Child HTML 2nd Element</h1>
-                    {/* <Footer/> */}
+                    <Footer/>
                 </DefaultApp>
-                {/* <Footer>
+                <Footer>
                     <h1>Child HTML 1 Element</h1>
                     <h1>Child HTML 2nd Element</h1>
                 </Footer> */}
 
                 {/* <button onClick={this.updateCounter}>Increment Counter</button> */}
-                {/* <button onClick={this.navigateMe} >About</button> */}
-                <input type={"text"} ref={this.session} placeholder="Type Session Value"></input>
+                {/* <button onClick={this.navigateMe} >About</button> 
+                <input type={"text"} ref={this.session} placeholder="Type Session Value"></input> */}
             </div>
         )
     }
@@ -154,3 +226,6 @@ export default class HomeComponent extends Component{
 
 // Destruction Life Cycle -
     //a. componentWillUnmount - gets called when we move to next page, should clear all subscription here
+
+
+//Q1. Create two components using controlled and uncontrolled way of creation
