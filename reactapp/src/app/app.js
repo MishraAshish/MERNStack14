@@ -8,6 +8,8 @@ import Footer from "./Common/FooterComponent";
 import About from "./Common/AboutComponent";
 import NotFound from "./Common/NotFound";
 
+import User from "./ApplicationComponent/User/UserContainer";
+
 
 export default class ApplicationComponent extends Component{
 
@@ -20,6 +22,7 @@ export default class ApplicationComponent extends Component{
                     <Routes>
                         <Route path="/home" element={<HomeComponent title={"Home Page Title"} />} />
                         <Route path="/about" element={<About />} />
+                        <Route path="/user" element={<User/>} />
                         <Route path="/about/:id" element={<About />} />
 
                         <Route path="*" element={<NotFound />} />

@@ -1,9 +1,12 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
+ 
+let Header = (props)=>{
 
-let Header = ()=>{
+    console.log(props.user) // reading store data send from mapStateToProps as props here
 
-    let userName = "";
+    let userName = props.user.userName;
 
     let navigate = useNavigate();
 
@@ -34,4 +37,15 @@ let Header = ()=>{
 //     headerTitle : PropTypes.string.isRequired
 // }
 
-export default Header;
+//subscribe - mapStateToProps -- mapStoreToProps
+//publish - mapDispatchToProps -- send new to store
+
+let mapStateToProps = (state)=>{ //store
+    return {
+        user : state.userReducer
+    }
+}
+
+export default connect(mapStateToProps, null)(Header);
+
+//export default Header;
