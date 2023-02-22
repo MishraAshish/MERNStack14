@@ -44,9 +44,9 @@ export default class User extends Component {
     loginUser = (evt)=>{
         alert("This user will be saved in db "+ JSON.stringify(this.state));
         
-        this.props.AddUserToStore(this.state);
+        //this.props.AddUserToStore(this.state);
         
-        //this.props.SaveUserToDB(this.state);
+        this.props.SaveUserToDB(this.state);
         
         evt.preventDefault();
     }

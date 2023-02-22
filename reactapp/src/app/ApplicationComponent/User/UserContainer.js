@@ -1,7 +1,7 @@
 import User from "./UserComponent";
 import { connect } from "react-redux";
 
-import { addUserToStore } from "../../state/user/useractions";
+import { addUserToStore, signInSignUpUser } from "../../State/User/useractions";
 
 //subsribing from store
 let mapStateToProps = (state)=>{ //store
@@ -15,7 +15,10 @@ let mapDispatchToStore = (dispatch)=>{
     return{
         AddUserToStore : (user)=>{
                 dispatch(addUserToStore(user))
-            }
+            },
+        SaveUserToDB : (user)=>{
+            dispatch(signInSignUpUser(user))
+        }
     }
 }
 

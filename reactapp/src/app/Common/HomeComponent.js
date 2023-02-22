@@ -30,10 +30,10 @@ export default class HomeComponent extends Component{
     componentDidMount() {
         //view is ready, state changes and api calls can be made
 
-        setTimeout(() => {
-            this.session.current.value = "This is more interesting now";
-            this.session.current.focus();
-        }, 5000);
+        // setTimeout(() => {
+        //     this.session.current.value = "This is more interesting now";
+        //     this.session.current.focus();
+        // }, 5000);
     }
 
     //update life cycle method
@@ -149,11 +149,26 @@ export default class HomeComponent extends Component{
     render(){
         console.log("Render component")
         return(
-            <div>
+            <div className={"loadimage form"} >
+                <h1>{this.state.title}</h1>
+                <b className="feature">{"Product Feature's :"}</b>
+                <ul>                     
+                    <li>Sign up new users</li>
+                    <li>Login existing users.</li>                
+                    <li>Allow user's to add to cart.</li>
+                    <li>Save the user's cart.</li>
+                    <li>Checkout and pay for items.</li>
+                    <li>Allow users to cancel the order.</li>
+                    <li>Allow users to reorder the cart.</li>
+                    <li>Add products/items to create product collection.</li>
+                    <li>Allow users to give ratings to each product.</li>
+                    <li>Have notifications on top right with logout.</li>
+                </ul>
+            {/*<div>
                 <h1>Home Component</h1>
                 {/* controlled component div based structure using fluid model*/}
 
-                <div className="col-md-12 form">
+                {/*<div className="col-md-12 form">
                     <div className="col-md-7">
                         <label>Address : </label>
                         <input type={"text"} value={this.state.address} placeholder="Please Type Your Address" 
@@ -164,11 +179,11 @@ export default class HomeComponent extends Component{
                         <input type={"text"} value={this.state.session} placeholder="Please Type Your Session" 
                             className="col-md-8 session" onChange={this.changeHandler_session} ></input>
                     </div>
-                </div>
+                </div>*/}
 
 
                 {/*un-controlled component uses form integration*/}
-                <form className="form col-md-12" action="user/saveinfo" onSubmit={this.submitHandler}>
+                {/*<form className="form col-md-12" action="user/saveinfo" onSubmit={this.submitHandler}>
                     <section className="col-md-7">
                         <label>Address : </label>
                         <input type={"text"} placeholder="Please Type Your Address" 
@@ -182,7 +197,7 @@ export default class HomeComponent extends Component{
 
                     <input type={"submit"} value="Submit" ></input>
 
-                </form>
+                </form>*/}
 
 
 
