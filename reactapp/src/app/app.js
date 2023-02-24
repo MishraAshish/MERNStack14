@@ -8,29 +8,27 @@ import Footer from "./Common/FooterComponent";
 import About from "./Common/AboutComponent";
 import NotFound from "./Common/NotFound";
 
-import User from "./ApplicationComponent/User/UserContainer";
+//import User from "./ApplicationComponent/User/UserContainer";
+import User from "./ApplicationComponent/User/UserHook";
 
-
-export default class ApplicationComponent extends Component{
+let ApplicationComponent =()=>{
 
     //virtual dom of component // 1 - state  ==>  2 - state
-    render(){
-        console.log("Render component")
-        return(
-            <Router>
-                <Header />
-                    <Routes>
-                        <Route path="/home" element={<HomeComponent title={"Home Page Title"} />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/user" element={<User/>} />
-                        <Route path="/about/:id" element={<About />} />
+    console.log("Render component")
+    return(
+        <Router>
+            <Header />
+                <Routes>
+                    <Route path="/home" element={<HomeComponent title={"Home Page Title"} />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/user" element={<User/>} />
+                    <Route path="/about/:id" element={<About />} />
 
-                        <Route path="*" element={<NotFound />} />
-                    </Routes>
-                <Footer />
-            </Router>
-        )
-    }
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+            <Footer />
+        </Router>
+    )
 }
 
-
+export default ApplicationComponent;
