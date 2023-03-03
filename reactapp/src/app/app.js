@@ -10,6 +10,7 @@ import NotFound from "./Common/NotFound";
 
 //import User from "./ApplicationComponent/User/UserContainer";
 import User from "./ApplicationComponent/User/UserHook";
+import ProductComponent from "./ApplicationComponent/Product/ProductComponent";
 
 let ApplicationComponent =()=>{
 
@@ -22,6 +23,7 @@ let ApplicationComponent =()=>{
                     <Route path="/home" element={<HomeComponent title={"Home Page Title"} />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/user" element={<User/>} />
+                    <Route path="/product" element={<ProductComponent/>} />
                     <Route path="/about/:id" element={<About />} />
 
                     <Route path="*" element={<NotFound />} />

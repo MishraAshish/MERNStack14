@@ -9,6 +9,9 @@ let defaultRouter = require("./routes/defaultRouter");
 let userApp = express();//different express instance
 let userRouter = require("./routes/userRouter");
 
+let productApp = express();//different express instance
+let productRouter = require("./routes/productRouter");
+
 app.use(cors());//setting cross origin to top level express api
 // serve static files like images css using static middleware
 app.use("/static", express.static("public"))
@@ -18,6 +21,9 @@ app.use(express.json({limit:'2mb', extended:false}));
 
 app.use("/user", userApp); // localhost:9000/user/signinup
 userApp.use("/",userRouter);
+
+app.use("/product", productApp); // localhost:9000/user/signinup
+productApp.use("/",productRouter);
 
 app.use("/", defaultRouter);
 

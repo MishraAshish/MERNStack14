@@ -4,7 +4,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { addUserToStore, signInSignUpUser } from "../../State/User/userActions";
+import { addUserToStore, signInSignUpUser } from "../../state/User/UserActions";
 
 let UserHook = (props) => {
     

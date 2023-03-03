@@ -1,7 +1,7 @@
 import User from "./UserComponent";
 import { connect } from "react-redux";
 
-import { addUserToStore, signInSignUpUser } from "../../State/User/useractions";
+import { addUserToStore, signInSignUpUser } from "../../state/User/UserActions";
 
 //subsribing from store
 let mapStateToProps = (state)=>{ //store

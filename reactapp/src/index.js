@@ -3,7 +3,7 @@ console.log("This file is used to bootstrap the entire react application in html
 import React from "react"; // default import
 import * as ReactDOM from "react-dom/client"; // importing all modules 
 import { Provider } from "react-redux";// provider component will make sure that it wraps whole react appln and has store object in it
-import store from "./app/State/store";
+import store from "./app/state/store";
 
 
 import ApplicationComponent from "./app/app";//react application
