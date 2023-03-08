@@ -2,6 +2,7 @@
 
 import * as ActionTypes from "../actionTypes";
 import axios from "axios";
+import { getUserCart } from "../Cart/cartAction";
 
 //action is the object that we'll dispatch from user component to store/reducer
 export const addUserToStore = (user)=>{
@@ -36,6 +37,8 @@ export const signInSignUpUser = (user) => {
 
                     //dispatching to store so that user state gets updated with new user
                     dispatch(addUserToStore(signdUser))
+
+                    dispatch(getUserCart(signdUser._id))
                 })
                 .catch((err)=>{
                     console.log("err in login ", err)

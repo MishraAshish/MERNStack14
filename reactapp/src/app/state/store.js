@@ -7,8 +7,9 @@ import { combineReducers, applyMiddleware } from "redux";
 import { configureStore } from '@reduxjs/toolkit';
 import thunk from "redux-thunk"; //is used to pipeline the dispatched objects and give us a feeling of sync execution by being async
 
-import userReducer from "./User/UserReducer.js";
-import productReducer from "./Product/ProductReducer.js";
+import userReducer from "./User/UserReducer";
+import productReducer from "./Product/ProductReducer";
+import cartRedcuer from "./Cart/cartReducer";
 
 const logger = () => (next) => (action) =>{
     //currying in javasript where we pass function as input and recieve function as output
@@ -19,7 +20,8 @@ const logger = () => (next) => (action) =>{
 //const rootReducer = userReducer;
 const rootReducer = combineReducers({
         userReducer,  //userReducer : userReducer
-        productReducer 
+        productReducer,
+        cartRedcuer 
 })
 
 //create configure and export the store from this code
