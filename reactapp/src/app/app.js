@@ -1,17 +1,17 @@
-import React, { Component } from "react";
+import React, { Component, lazy, Suspense  } from "react";
 import "./app.css"
 import { BrowserRouter as Router, Routes, Redirect, Route } from "react-router-dom";// browser router from react
 
-import Header from "./Common/HeaderComponent"
-import HomeComponent from "./Common/HomeComponent";
-import Footer from "./Common/FooterComponent";
-import About from "./Common/AboutComponent";
-import NotFound from "./Common/NotFound";
+let Header = lazy(()=> import("./Common/HeaderComponent"));
+let HomeComponent = lazy(()=> import("./Common/HomeComponent"));
+let Footer = lazy(()=> import("./Common/FooterComponent"));
+let About = lazy(()=> import("./Common/AboutComponent"));
+let NotFound = lazy(()=> import("./Common/NotFound"));
 
 //import User from "./ApplicationComponent/User/UserContainer";
-import User from "./ApplicationComponent/User/UserHook";
-import ProductComponent from "./ApplicationComponent/Product/ProductComponent";
-import CartComponent from "./ApplicationComponent/Cart/CartComponent";
+let User = lazy(()=> import("./ApplicationComponent/User/UserHook"));
+let ProductComponent = lazy(()=> import("./ApplicationComponent/Product/ProductComponent"));
+let CartComponent = lazy(()=> import("./ApplicationComponent/Cart/CartComponent"));
 
 
 let ApplicationComponent =()=>{
@@ -20,6 +20,7 @@ let ApplicationComponent =()=>{
     console.log("Render component")
     return(
         <Router>
+            <Suspense fallback={<div>Loading Application in Lazy way...</div>}>
             <Header />
                 <Routes>
                     <Route path="/home" element={<HomeComponent title={"Home Page Title"} />} />
@@ -32,6 +33,7 @@ let ApplicationComponent =()=>{
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             <Footer />
+            </Suspense>
         </Router>
     )
 }
