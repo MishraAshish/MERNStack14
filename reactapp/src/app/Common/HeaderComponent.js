@@ -19,6 +19,7 @@ let Header = (props)=>{
             Hi <b>{userName +", "}</b> Welcome to SynergisticIT Shopping Cart 
             {userName == "" ?<b> Please Login to see other features</b>:""}
             <div>
+                <NavLink to="/hooks" className="button" activeclassname="success" >Hooks </NavLink>
                 <NavLink to="/home" className="button" activeclassname="success" >Home </NavLink> 
                 <NavLink to="/user" className="button" activeclassname="success" >User </NavLink> 
                 <NavLink to="/product" className="button" activeclassname="success" >Product </NavLink> 

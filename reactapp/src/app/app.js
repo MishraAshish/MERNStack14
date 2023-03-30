@@ -13,6 +13,7 @@ let User = lazy(()=> import("./ApplicationComponent/User/UserHook"));
 let ProductComponent = lazy(()=> import("./ApplicationComponent/Product/ProductComponent"));
 let CartComponent = lazy(()=> import("./ApplicationComponent/Cart/CartComponent"));
 
+let Hooks = lazy(()=> import("./Hooks/HooksMemo"));
 
 let ApplicationComponent =()=>{
 
@@ -23,6 +24,7 @@ let ApplicationComponent =()=>{
             <Suspense fallback={<div>Loading Application in Lazy way...</div>}>
             <Header />
                 <Routes>
+                    <Route path="/hooks" element={<Hooks />} />
                     <Route path="/home" element={<HomeComponent title={"Home Page Title"} />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/user" element={<User/>} />
